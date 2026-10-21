@@ -1,25 +1,40 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
+import NotFound from "./NotFound";
+import { ArticlesContext } from "../Context/ArticlesContext";
+import { sections } from "../data/sections";
 
 function Section() {
   const { section = "home" } = useParams();
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { cache, setCache } = useContext(ArticlesContext);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const isValid =
+    section === "home" || sections.some((s) => s.path === section);
+  const articles = cache[section] || [];
+
   useEffect(() => {
-    setLoading(true);
+    if (!isValid) return;
+
     setError(null);
-    setArticles([]);
+
+    if (cache[section]) {
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+
     axios
       .get(
         `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${import.meta.env.VITE_NYT_API_KEY}`,
       )
       .then((res) => {
         const withTitle = res.data.results.filter((article) => article.title);
-        setArticles(withTitle.slice(0, 15));
+        setCache((prev) => ({ ...prev, [section]: withTitle.slice(0, 15) }));
       })
       .catch((err) => {
         console.error(err);
@@ -32,7 +47,12 @@ function Section() {
       .finally(() => {
         setLoading(false);
       });
-  }, [section]);
+  }, [section, cache, setCache, isValid]);
+
+  if (!isValid) {
+    return <NotFound />;
+  }
+
   return (
     <div>
       <h1>{section}</h1>
