@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
+import ArticleCard from "./ArticleCard";
 
 function Section() {
   const { section = "home" } = useParams();
@@ -20,11 +21,9 @@ function Section() {
   return (
     <div>
       <h1>{section}</h1>
-      <ul>
-        {articles.map((article) => (
-          <li key={article.uri}>{article.title}</li>
-        ))}
-      </ul>
+      {articles.map((article) => (
+        <ArticleCard key={article.uri} article={article} />
+      ))}
     </div>
   );
 }
