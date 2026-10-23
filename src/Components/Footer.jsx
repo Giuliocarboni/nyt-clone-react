@@ -4,7 +4,7 @@ import logo from "../assets/logo.svg";
 
 function Footer() {
   return (
-    <footer className="pt-4">
+    <footer className="pt-4 px-4">
       <div className="mx-auto max-w-[1200px] border-t border-gray-300 py-8">
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <img src={logo} alt="The New York Times" className="h-auto w-50" />

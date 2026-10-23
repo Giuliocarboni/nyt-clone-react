@@ -56,7 +56,7 @@ function Section() {
   return (
     <main className="px-4 pb-12 mt-5">
       <div className="mx-auto max-w-[1200px]">
-        {loading && <p>Loading...</p>}
+        {loading && <p>Loading articles</p>}
         {error && <p>{error}</p>}
         <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
