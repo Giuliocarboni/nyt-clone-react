@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Section from "../src/Components/Section";
 import NotFound from "./Components/NotFound";
 import "./App.css";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/section/:section" element={<Section />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </>
   );
 }

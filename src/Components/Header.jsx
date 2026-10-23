@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <>
-      <header className="px-4">
+      <header className="border-b border-neutral-300 px-4 lg:border-b-0">
         <div className="mx-auto grid max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center py-3 lg:grid-cols-[1fr_auto_1fr]">
           <div>
             <button

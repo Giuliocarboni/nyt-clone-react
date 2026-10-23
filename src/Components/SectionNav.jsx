@@ -5,7 +5,7 @@ function SectionNav({ open, onClose }) {
   return (
     <nav className="relative">
       <ul
-        className={`${open ? "block" : "hidden"} absolute inset-x-0 top-0 z-10 divide-y divide-gray-200 border-b border-gray-300 bg-white px-4 text-sm shadow-md lg:static lg:flex lg:flex-wrap lg:justify-center lg:gap-x-6 lg:gap-y-2 lg:divide-y-0 lg:py-3 lg:shadow-none`}>
+        className={`${open ? "block" : "hidden"} absolute inset-x-0 top-0 z-10 divide-y divide-gray-200 bg-white px-4 text-sm shadow-md lg:static lg:flex lg:flex-wrap lg:justify-center lg:gap-x-6 lg:gap-y-2 lg:divide-y-0 lg:py-3 lg:shadow-none`}>
         {sections.map((s) => (
           <li key={s.path}>
             <NavLink
