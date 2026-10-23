@@ -54,14 +54,17 @@ function Section() {
   }
 
   return (
-    <div>
-      <h1>{section}</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {articles.map((article) => (
-        <ArticleCard key={article.uri} article={article} />
-      ))}
-    </div>
+    <main className="px-4 pb-12 mt-5">
+      <div className="mx-auto max-w-[1200px]">
+        {loading && <p>Loading...</p>}
+        {error && <p>{error}</p>}
+        <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          {articles.map((article) => (
+            <ArticleCard key={article.uri} article={article} />
+          ))}
+        </div>
+      </div>
+    </main>
   );
 }
 

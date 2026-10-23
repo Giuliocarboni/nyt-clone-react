@@ -1,7 +1,11 @@
+import { sections } from "../data/sections";
+
 function ArticleCard({ article }) {
   const image = article.multimedia?.find(
     (m) => m.format === "threeByTwoSmallAt2X" || article.multimedia?.[0],
   );
+  const sectionName =
+    sections.find((s) => s.path === article.section)?.name || article.section;
 
   return (
     <article className="border-b border-neutral-200 pb-6">
@@ -17,6 +21,11 @@ function ArticleCard({ article }) {
             loading="lazy"
             className="mb-3 aspect-[3/2] w-full object-cover"
           />
+        )}
+        {sectionName && (
+          <p className="mb-1 text-xs font-bold uppercase tracking-wide text-neutral-500">
+            {sectionName}
+          </p>
         )}
         <h2 className="font-serif text-[clamp(1.125rem,1rem+0.5vw,1.375rem)] font-bold leading-snug group-hover:underline">
           {article.title}

@@ -10,8 +10,8 @@ function Header() {
 
   return (
     <>
-      <header className="border-b border-neutral-300 px-4 lg:border-b-0">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center py-3 lg:grid-cols-[1fr_auto_1fr] lg:border-b lg:border-black lg:py-6">
+      <header className="px-4">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center py-3 lg:grid-cols-[1fr_auto_1fr]">
           <div>
             <button
               className="-ml-2 flex rounded-full p-2 hover:bg-gray-100 lg:hidden"
@@ -35,13 +35,13 @@ function Header() {
             />
           </Link>
         </div>
-        <div
-          aria-hidden="true"
-          className="mx-auto mt-[2px] hidden max-w-[1200px] border-t border-black lg:block"
-        />
       </header>
 
       <SectionNav open={open} onClose={() => setOpen(false)} />
+
+      <div aria-hidden="true" className="hidden px-4 lg:block">
+        <div className="mx-auto h-1 max-w-[1200px] border-y border-black" />
+      </div>
 
       <p className=" px-4 py-4 text-left text-xs font-bold text-neutral-900 lg:hidden">
         {today}
