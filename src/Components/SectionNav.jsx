@@ -12,7 +12,9 @@ function SectionNav({ open, onClose }) {
               to={`/section/${s.path}`}
               onClick={onClose}
               className={({ isActive }) =>
-                `block py-3.5 lg:inline lg:py-0 ${isActive ? "font-bold underline" : "hover:underline"}`
+                `block py-3.5 lg:inline lg:py-0 underline-offset-4 decoration-2 ${
+                  isActive ? "font-bold underline" : "hover:underline"
+                }`
               }>
               {s.name}
             </NavLink>

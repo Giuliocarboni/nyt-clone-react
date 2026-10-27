@@ -1,4 +1,5 @@
 export const sections = [
+  { name: "Top Stories", path: "home" },
   { name: "World", path: "world" },
   { name: "U.S.", path: "us" },
   { name: "Politics", path: "politics" },
