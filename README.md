@@ -21,45 +21,8 @@ Project for the React course in Start2Impact's Master's program in Full-Stack De
 - **Tailwind CSS 4**
 - **React Router**
 - **Axios**
-- **Context API** for state shared across components
-- **Materual Symbols** for icons
-
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org) (current LTS version)
-- A free API key from the [NYT Developer Portal](https://developer.nytimes.com): create an account, create a new app, and enable the **Top Stories API**.
-
-### Installation
-
-```bash
-git clone https://github.com/Giuliocarboni/nyt-clone.git
-cd nyt-clone
-npm install
-```
-
-Create a `.env` file in the project root with your API key:
-
-```
-VITE_NYT_API_KEY=your_api_key
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-The app runs at `http://localhost:5173`.
-
-### Scripts
-
-| Command           | Description                          |
-| ----------------- | ------------------------------------ |
-| `npm run dev`     | Start the development server         |
-| `npm run build`   | Build the app for production         |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint`    | Run ESLint                           |
+- **Context API**
+- **Materual Symbols**
 
 ## How it works
 
@@ -82,4 +45,4 @@ The app is deployed on Netlify.
 
 - Data provided by [The New York Times](https://developer.nytimes.com).
 - This project is not affiliated with The New York Times. The New York Times name and logo are trademarks of The New York Times Company and are used here for educational purposes only.
-- Made by [Giulio Carboni](https://giuliocarboni.com).
+- Made by Giulio Carboni [Sito web](https://giuliocarboni.com) · [Linkedin](https://www.linkedin.com/in/giulio-carboni-dev/)
